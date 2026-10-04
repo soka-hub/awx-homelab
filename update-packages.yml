@@ -1,0 +1,11 @@
+---
+- name: Mettre à jour tous les paquets
+  hosts: all
+  gather_facts: true
+
+  tasks:
+    - name: Mettre à jour tous les paquets avec DNF
+      ansible.builtin.dnf:
+        name: "*"
+        state: latest
+        update_cache: true
